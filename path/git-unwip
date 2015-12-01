@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Adapted from the git oh-my-zsh plugin, which can be found at
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
+
+git log -n 1 | grep -q -c "\-\- WIP \-\-" && git reset HEAD~1
+

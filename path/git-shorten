@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# $1 : Github URL to shorten
+# $2 (optional) : Name to shorten the URL to (ie. git.io/$2)
+
+if [ -z "$2" ]; then
+  curl -i http://git.io -F "url=$1"
+else
+  curl -i http://git.io -F "url=$1" -F "code=$2"
+fi

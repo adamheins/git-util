@@ -1,0 +1,15 @@
+#!/bin/bash
+# Change git author information for past commits.
+
+# Change 'x' to the author email you want to change.
+# Change 'y' to the name you want to change to.
+# Change 'z' to the email you want to change to.
+
+git filter-branch -f --commit-filter '
+  if [ "$GIT_AUTHOR_EMAIL" = "x" ]; then
+    GIT_AUTHOR_NAME="y";
+    GIT_AUTHOR_EMAIL="z";
+    git commit-tree "$@";
+  else
+    git commit-tree "$@";
+  fi' HEAD

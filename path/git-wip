@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Adapted from the git oh-my-zsh plugin, which can be found at
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
+
+git add -A
+git rm $(git ls-files --deleted) 2> /dev/null
+git commit -m "-- WIP --"
